@@ -1,22 +1,40 @@
-.item {
+.container {
+  --online-cl: #fe5251;
+  --offline-cl: #51ad52;
   display: flex;
   align-items: center;
-  padding: 15px;
-  gap: 10px;
-
-  border: 1px solid rgb(108, 108, 108);
-  box-shadow: 5px 5px 5px 0px rgb(108, 108, 108);
-  border-radius: 10px;
+  gap: 15px;
+  padding: 15px 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
   overflow: hidden;
+  min-width: 300px;
+  margin: auto;
+  justify-content: center;
 }
 
-.item:not(:last-child) {
-  margin-bottom: 10px;
+.status {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.online {
+  composes: status;
+  background-color: var(--offline-cl);
+}
+
+.offline {
+  composes: status;
+  background-color: var(--online-cl);
 }
 
 .avatar {
-  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
 }
+
 .name {
-  font-weight: 600;
+  font-weight: 700;
 }
